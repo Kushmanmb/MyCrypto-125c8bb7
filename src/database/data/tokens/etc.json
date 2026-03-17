@@ -1,0 +1,51 @@
+[
+  {
+    "address": "0x085fb4f24031EAedbC2B611AA528f22343eB52Db",
+    "ticker": "BEC",
+    "decimal": 8,
+    "name": "BEC",
+    "uuid": "b35b19f9-fc86-5868-b73e-158f97d9d597"
+  },
+  {
+    "address": "0x5acE17f87c7391E5792a7683069A8025B83bbd85",
+    "ticker": "PLAY",
+    "decimal": 0,
+    "name": "Smart Billions",
+    "uuid": "7dc69de9-43a4-59e5-af8e-be24a2b56e87"
+  },
+  {
+    "address": "0x6ADa6F48C815689502C43eC1a59F1b5DD3C04E1F",
+    "ticker": "UNV",
+    "decimal": 18,
+    "name": "UniversalCoin",
+    "uuid": "96fac482-bffe-5560-b9db-1695d868f496"
+  },
+  {
+    "address": "0xDE093684c796204224BC081f937aa059D903c52a",
+    "ticker": "USC",
+    "decimal": 6,
+    "name": "Classic USD",
+    "uuid": "65e4e49f-2aff-5c92-86bb-34e60b065c02"
+  },
+  {
+    "address": "0x76d0184CF511788032A74a1FB91146e63F43dd53",
+    "ticker": "UVC",
+    "decimal": 5,
+    "name": "UniversalCoin",
+    "uuid": "01dbee9f-4e8d-5319-8cff-acbc39c00aa0"
+  },
+  {
+    "address": "0xd6dF0C579f2A65049a893fDaEC9fCE098CC19F87",
+    "ticker": "UVCX",
+    "decimal": 18,
+    "name": "UniversalCoin X",
+    "uuid": "41e00a96-f6ad-582a-81e0-99bb4238cbc2"
+  },
+  {
+    "address": "0x1953cab0E5bFa6D4a9BaD6E05fD46C1CC6527a5a",
+    "ticker": "WETC",
+    "decimal": 18,
+    "name": "Wrapped Ether",
+    "uuid": "12fdbf9d-5bd1-5c52-b19a-c489ba730ecf"
+  }
+]

@@ -43,8 +43,16 @@ import {
   GAS_PRICE_DEFAULT,
   GAS_PRICE_TESTNET
 } from '@config';
-import { NetworkId, NetworkLegacy, TTicker, WalletId } from '@types';
+import { AssetLegacy, NetworkId, NetworkLegacy, TTicker, WalletId } from '@types';
 import { makeExplorer } from '@utils/makeExplorer'; // leads to circular dependency if importing from base utils dir
+
+import ETC_TOKENS from './tokens/etc.json';
+import ETH_TOKENS from './tokens/eth.json';
+import GOR_TOKENS from './tokens/gor.json';
+import KOV_TOKENS from './tokens/kov.json';
+import RIN_TOKENS from './tokens/rin.json';
+import ROP_TOKENS from './tokens/rop.json';
+import UBQ_TOKENS from './tokens/ubq.json';
 
 // Temporay type to bridge the difference between v1 and v2 network definitions.
 export type NetworkConfig = {
@@ -68,7 +76,7 @@ export const NETWORKS_CONFIG: NetworkConfig = {
       name: 'Ethplorer',
       origin: ETHPLORER_URL
     }),
-    tokens: [],
+    tokens: ETH_TOKENS as AssetLegacy[],
     contracts: require('./contracts/eth.json'),
     dPaths: {
       [WalletId.TREZOR]: DEFAULT_ETH,
@@ -93,7 +101,7 @@ export const NETWORKS_CONFIG: NetworkConfig = {
       name: 'Etherscan',
       origin: 'https://ropsten.etherscan.io'
     }),
-    tokens: [],
+    tokens: ROP_TOKENS as AssetLegacy[],
     contracts: require('./contracts/ropsten.json'),
     isTestnet: true,
     dPaths: {
@@ -118,7 +126,7 @@ export const NETWORKS_CONFIG: NetworkConfig = {
       name: 'Etherscan',
       origin: 'https://kovan.etherscan.io'
     }),
-    tokens: [],
+    tokens: KOV_TOKENS as AssetLegacy[],
     contracts: require('./contracts/kovan.json'),
     isTestnet: true,
     dPaths: {
@@ -142,7 +150,7 @@ export const NETWORKS_CONFIG: NetworkConfig = {
       name: 'Etherscan',
       origin: 'https://rinkeby.etherscan.io'
     }),
-    tokens: [],
+    tokens: RIN_TOKENS as AssetLegacy[],
     contracts: require('./contracts/rinkeby.json'),
     isTestnet: true,
     dPaths: {
@@ -167,7 +175,7 @@ export const NETWORKS_CONFIG: NetworkConfig = {
       name: 'Etherscan',
       origin: 'https://goerli.etherscan.io'
     }),
-    tokens: [],
+    tokens: GOR_TOKENS as AssetLegacy[],
     contracts: require('./contracts/goerli.json'),
     isTestnet: true,
     dPaths: {
@@ -193,7 +201,7 @@ export const NETWORKS_CONFIG: NetworkConfig = {
       origin: 'https://blockscout.com/etc/mainnet',
       addressPath: 'address'
     }),
-    tokens: [],
+    tokens: ETC_TOKENS as AssetLegacy[],
     contracts: require('./contracts/etc.json'),
     dPaths: {
       [WalletId.TREZOR]: DEFAULT_ETC,
@@ -220,7 +228,7 @@ export const NETWORKS_CONFIG: NetworkConfig = {
       name: 'Ubiqscan',
       origin: 'https://ubiqscan.io'
     }),
-    tokens: [],
+    tokens: UBQ_TOKENS as AssetLegacy[],
     contracts: require('./contracts/ubq.json'),
     dPaths: {
       [WalletId.TREZOR]: DEFAULT_UBQ,
