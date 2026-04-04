@@ -111,6 +111,8 @@ export {
   canTrackProductAnalytics,
   setProductAnalyticsAuthorisation,
   getAnalyticsUserID,
+  setEIP1559Enabled,
+  getIsEIP1559Enabled,
   setAnalyticsUserID,
   getSettings,
   getFiatInformation

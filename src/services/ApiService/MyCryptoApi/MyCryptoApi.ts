@@ -28,7 +28,7 @@ export default class MyCryptoApiService {
       const { data } = await this.service.get<Record<TUuid, ExtendedAsset>>('assets.json');
       return mapObjIndexed((asset) => ({ ...asset, isCustom: false }), data);
     } catch (e) {
-      console.log('[MyCryptoApiService]: Fetching assets failed: ', e);
+      console.error('[MyCryptoApiService]: Fetching assets failed: ', e);
       return {};
     }
   };
@@ -38,7 +38,7 @@ export default class MyCryptoApiService {
       const { data } = await this.service.get<Record<TxType, ITxTypeMeta>>('schemas.json');
       return data;
     } catch (e) {
-      console.log('[MyCryptoApiService]: Fetching schemas meta failed: ', e);
+      console.error('[MyCryptoApiService]: Fetching schemas meta failed: ', e);
       return {};
     }
   };

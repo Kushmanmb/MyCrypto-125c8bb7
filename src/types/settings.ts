@@ -11,4 +11,5 @@ export interface ISettings {
   isDemoMode: boolean;
   canTrackProductAnalytics: boolean;
   analyticsUserID: string;
+  isEIP1559Enabled?: boolean;
 }

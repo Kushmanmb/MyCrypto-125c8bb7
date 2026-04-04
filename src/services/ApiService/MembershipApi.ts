@@ -67,7 +67,7 @@ const MembershipApi = {
             return { memberships, errors: {} } as MembershipFetchResult;
           })
           .catch((err) => {
-            console.log('[getMemberships]: Failed for network: ', config.network.id, ' err: ', err);
+            console.error('[getMemberships]: Failed for network: ', config.network.id, ' err: ', err);
             return {
               memberships: [] as MembershipStatus[],
               errors: { [config.network.id]: true }

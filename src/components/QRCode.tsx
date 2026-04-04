@@ -5,9 +5,10 @@ import styled from 'styled-components';
 
 import Spinner from './Spinner';
 
-// FIXME should store limited amount if history
-// data -> qr cache
+// LRU cache with max 50 entries to prevent memory leaks
+const MAX_CACHE_SIZE = 50;
 const cache: { [key: string]: string } = {};
+const cacheKeys: string[] = [];
 
 interface Props {
   data: string;
@@ -67,7 +68,15 @@ export default class QRCode extends PureComponent<Props, State> {
         if (err) {
           return;
         }
+        // Implement LRU cache eviction
+        if (cacheKeys.length >= MAX_CACHE_SIZE) {
+          const oldestKey = cacheKeys.shift();
+          if (oldestKey) {
+            delete cache[oldestKey];
+          }
+        }
         cache[value] = qr;
+        cacheKeys.push(value);
         this.setState({ qr });
       }
     );
