@@ -8,5 +8,6 @@ export const defaultSettings = {
   language: 'en',
   isDemoMode: false,
   canTrackProductAnalytics: true,
-  analyticsUserID: ''
+  analyticsUserID: '',
+  isEIP1559Enabled: true
 };

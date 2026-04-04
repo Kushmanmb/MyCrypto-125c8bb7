@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 import { Button } from '@mycrypto/ui';
 import { AnyAction, bindActionCreators, Dispatch } from '@reduxjs/toolkit';
@@ -7,11 +7,13 @@ import styled from 'styled-components';
 
 import { DashboardPanel, Divider, LinkApp, SubHeading, Switch, Tooltip } from '@components';
 import { Fiats, PRIVACY_POLICY_LINK, ROUTE_PATHS } from '@config';
-import { getEIP1559FeatureFlag, setEIP1559FeatureFlag } from '@helpers';
+import { migrateEIP1559FlagFromLocalStorage } from '@helpers';
 import {
   AppState,
   canTrackProductAnalytics,
   getFiat,
+  getIsEIP1559Enabled,
+  setEIP1559Enabled,
   setFiat,
   setProductAnalyticsAuthorisation
 } from '@store';
@@ -62,17 +64,24 @@ const GeneralSettings = ({
   fiatCurrency,
   setFiat,
   canTrackProductAnalytics,
-  setProductAnalyticsAuthorisation
+  setProductAnalyticsAuthorisation,
+  isEIP1559Enabled,
+  setEIP1559Enabled
 }: Props) => {
   const toggleAnalytics = () => {
     setProductAnalyticsAuthorisation(!canTrackProductAnalytics);
   };
 
-  const [eip1559, setEIP1559] = useState(getEIP1559FeatureFlag());
+  // Migrate from localStorage on first load
+  useEffect(() => {
+    const migratedValue = migrateEIP1559FlagFromLocalStorage();
+    if (migratedValue !== undefined && isEIP1559Enabled === undefined) {
+      setEIP1559Enabled(migratedValue);
+    }
+  }, [isEIP1559Enabled, setEIP1559Enabled]);
 
   const toggleEIP1559 = () => {
-    setEIP1559(!eip1559);
-    setEIP1559FeatureFlag(!eip1559);
+    setEIP1559Enabled(!isEIP1559Enabled);
   };
 
   const changeCurrencySelection = (event: FormEvent<HTMLSelectElement>) => {
@@ -123,7 +132,7 @@ const GeneralSettings = ({
           <Switch
             id="toggle-eip1559"
             $greyable={true}
-            checked={getEIP1559FeatureFlag()}
+            checked={isEIP1559Enabled ?? true}
             onChange={toggleEIP1559}
             labelLeft="OFF"
             labelRight="ON"
@@ -159,14 +168,16 @@ const GeneralSettings = ({
 
 const mapStateToProps = (state: AppState) => ({
   fiatCurrency: getFiat(state),
-  canTrackProductAnalytics: canTrackProductAnalytics(state)
+  canTrackProductAnalytics: canTrackProductAnalytics(state),
+  isEIP1559Enabled: getIsEIP1559Enabled(state)
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators(
     {
       setFiat,
-      setProductAnalyticsAuthorisation
+      setProductAnalyticsAuthorisation,
+      setEIP1559Enabled
     },
     dispatch
   );
