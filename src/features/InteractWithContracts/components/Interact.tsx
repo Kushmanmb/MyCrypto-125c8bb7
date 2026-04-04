@@ -351,7 +351,10 @@ function Interact(props: CombinedProps) {
                     const selectedContract = contracts.find((c) =>
                       isSameAddress(c.address as TAddress, option.value as TAddress)
                     );
-                    handleContractSelected(selectedContract);
+                    // Only call handleContractSelected if a matching contract was found
+                    if (selectedContract) {
+                      handleContractSelected(selectedContract);
+                    }
 
                     handleAddressOrDomainChanged(option.value);
                   }}

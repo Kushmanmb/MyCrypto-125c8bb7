@@ -73,9 +73,13 @@ const GeneralSettings = ({
   };
 
   // Migrate from localStorage on first load
+  // Only migrate if Redux state has never been set (undefined) and localStorage has a value
   useEffect(() => {
     const migratedValue = migrateEIP1559FlagFromLocalStorage();
-    if (migratedValue !== undefined && isEIP1559Enabled === undefined) {
+    // Only apply migration if both conditions are met:
+    // 1. Redux state is undefined (never been set)
+    // 2. localStorage had a value (migratedValue !== undefined)
+    if (isEIP1559Enabled === undefined && migratedValue !== undefined) {
       setEIP1559Enabled(migratedValue);
     }
   }, [isEIP1559Enabled, setEIP1559Enabled]);

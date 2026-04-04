@@ -34,8 +34,9 @@ export const setEIP1559FeatureFlag = (value: boolean) => {
 
 // Check if EIP1559 is supported and enabled
 // @param network - The network to check for EIP1559 support
-// @param isEnabled - Optional: whether EIP1559 is enabled in settings (defaults to localStorage check)
+// @param isEnabled - Optional: whether EIP1559 is enabled in settings (null/undefined = check localStorage fallback, true/false = explicit override)
 export const isEIP1559Supported = (network: Network, isEnabled?: boolean) => {
+  // Use explicit value if provided, otherwise fall back to localStorage
   const enabled = isEnabled !== undefined ? isEnabled : getLocalStorageFallback();
   return enabled && network.supportsEIP1559;
 };
