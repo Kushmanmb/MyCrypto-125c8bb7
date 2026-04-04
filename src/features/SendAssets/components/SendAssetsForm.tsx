@@ -144,7 +144,7 @@ const getInitialFormikValues = ({
   defaultNetwork,
   networks
 }: {
-  s: ITxConfig;
+  s: Partial<ITxConfig>;
   defaultAccount: StoreAccount | undefined;
   defaultAsset: Asset | undefined;
   defaultNetwork: Network | undefined;
@@ -426,8 +426,7 @@ export const SendAssetsForm = ({ txConfig, onComplete, protectTxButton }: ISendF
     const asset = values.asset;
     const newAccount = getDefaultAccount(asset);
     const newInitialValues = getInitialFormikValues({
-      // @ts-expect-error @todo Fix reliance on txConfig being {}
-      s: asset.uuid === txConfig.asset?.uuid ? txConfig : {},
+      s: asset.uuid === txConfig?.asset?.uuid ? txConfig : {},
       defaultAccount: newAccount,
       defaultAsset: asset,
       defaultNetwork: getDefaultNetwork(newAccount),

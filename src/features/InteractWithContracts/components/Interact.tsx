@@ -347,8 +347,11 @@ function Interact(props: CombinedProps) {
                   isResolvingName={isResolvingName}
                   setIsResolvingDomain={setIsResolvingDomain}
                   onSelect={(option) => {
-                    // @ts-expect-error: Contract vs IReceiverAddress. @todo: this is a bug.
-                    handleContractSelected(option);
+                    // Find the actual contract from the list by matching addresses
+                    const selectedContract = contracts.find((c) =>
+                      isSameAddress(c.address as TAddress, option.value as TAddress)
+                    );
+                    handleContractSelected(selectedContract);
 
                     handleAddressOrDomainChanged(option.value);
                   }}
