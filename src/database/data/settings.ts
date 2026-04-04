@@ -9,5 +9,7 @@ export const defaultSettings = {
   isDemoMode: false,
   canTrackProductAnalytics: true,
   analyticsUserID: '',
+  // Default to true to enable EIP1559 by default for networks that support it
+  // This matches the default in settings.slice.ts selector
   isEIP1559Enabled: true
 };

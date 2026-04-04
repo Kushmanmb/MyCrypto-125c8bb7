@@ -3,12 +3,14 @@ import { Network } from '@types';
 const featureFlagName = 'MYC_EIP1559';
 
 // Migration helper: reads from localStorage for backwards compatibility
-// Returns true if feature should be enabled by default
+// Returns the stored value and removes it from localStorage
+// Note: This function should ideally be called only once during app initialization
+// to avoid race conditions. The removal happens immediately to ensure clean state.
 export const migrateEIP1559FlagFromLocalStorage = (): boolean | undefined => {
   const ls = localStorage.getItem(featureFlagName);
   if (ls !== null) {
-    // Clean up old localStorage value
     const value = ls !== 'false';
+    // Remove immediately after reading to ensure single source of truth (Redux)
     localStorage.removeItem(featureFlagName);
     return value;
   }

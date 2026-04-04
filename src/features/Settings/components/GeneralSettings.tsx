@@ -74,6 +74,8 @@ const GeneralSettings = ({
 
   // Migrate from localStorage on first load
   // Only migrate if Redux state has never been set (undefined) and localStorage has a value
+  // Note: migrateEIP1559FlagFromLocalStorage is not in dependency array as it's a stable function
+  // that doesn't change between renders
   useEffect(() => {
     const migratedValue = migrateEIP1559FlagFromLocalStorage();
     // Only apply migration if both conditions are met:
@@ -82,6 +84,7 @@ const GeneralSettings = ({
     if (isEIP1559Enabled === undefined && migratedValue !== undefined) {
       setEIP1559Enabled(migratedValue);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isEIP1559Enabled, setEIP1559Enabled]);
 
   const toggleEIP1559 = () => {
