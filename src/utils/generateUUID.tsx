@@ -1,6 +1,6 @@
 import { toChecksumAddress } from 'ethereumjs-util';
 import getUuid from 'uuid-by-string';
-import v4 from 'uuid/v4';
+import { v4 } from 'uuid';
 
 import { NetworkId, TUuid } from '@types';
 

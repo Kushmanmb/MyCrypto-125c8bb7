@@ -80,7 +80,7 @@ const {
   updateAssets
 } = slice.actions;
 
-jest.mock('uuid/v4', () => jest.fn().mockImplementation(() => 'foo'));
+jest.mock('uuid', () => ({ v4: jest.fn().mockImplementation(() => 'foo') }));
 
 Date.now = jest.fn().mockImplementation(() => 1623248693738);
 

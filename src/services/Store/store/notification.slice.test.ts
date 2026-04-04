@@ -17,7 +17,7 @@ import {
 
 const reducer = slice.reducer;
 
-jest.mock('uuid/v4', () => jest.fn().mockImplementation(() => 'foo'));
+jest.mock('uuid', () => ({ v4: jest.fn().mockImplementation(() => 'foo') }));
 
 beforeAll(() => {
   jest.useFakeTimers('modern');
