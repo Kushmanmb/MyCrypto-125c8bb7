@@ -1,0 +1,37 @@
+[
+  {
+    "address": "0x7af963cF6D228E564e2A0aA0DdBF06210B38615D",
+    "ticker": "TST",
+    "decimal": 18,
+    "name": "goerli Test token",
+    "uuid": "00701b3a-b101-582d-bef1-bfd2b73e944b"
+  },
+  {
+    "address": "0xaFF4481D10270F50f203E0763e2597776068CBc5",
+    "ticker": "WEENUS",
+    "decimal": 18,
+    "name": "WEENUS test token",
+    "uuid": "558563b4-0c5e-552b-9326-2f9b0a411558"
+  },
+  {
+    "address": "0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c",
+    "ticker": "XEENUS",
+    "decimal": 18,
+    "name": "XEENUS test token",
+    "uuid": "c9594dee-bcb8-5b0b-a390-447189c6bf88"
+  },
+  {
+    "address": "0xc6fDe3FD2Cc2b173aEC24cc3f267cb3Cd78a26B7",
+    "ticker": "YEENUS",
+    "decimal": 8,
+    "name": "YEENUS test token",
+    "uuid": "b10f1d30-fd20-528b-8b81-2d6cc3a7e1fb"
+  },
+  {
+    "address": "0x1f9061B953bBa0E36BF50F21876132DcF276fC6e",
+    "ticker": "ZEENUS",
+    "decimal": 0,
+    "name": "ZEENUS test token",
+    "uuid": "f1e05d39-36cb-5adf-9ad8-3cca76ee11e4"
+  }
+]

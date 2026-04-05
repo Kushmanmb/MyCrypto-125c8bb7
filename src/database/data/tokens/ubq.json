@@ -1,0 +1,93 @@
+[
+  {
+    "address": "0xFF3bF057ADF3b0E015b6465331a6236e55688274",
+    "ticker": "BEER",
+    "decimal": 0,
+    "name": "BEER",
+    "uuid": "3af0e000-d98f-58ea-8138-cf977ef73bd6"
+  },
+  {
+    "address": "0x08533D6A06CE365298b12Ef92eb407cBA8Aa8273",
+    "ticker": "CEFS",
+    "decimal": 8,
+    "name": "CEFS",
+    "uuid": "f928beb9-cc54-5ac9-a1b8-fbe068660a3e"
+  },
+  {
+    "address": "0x94aD7e41c1D44022C4F47cb1Ba019Fd1a022c536",
+    "ticker": "DOT",
+    "decimal": 8,
+    "name": "DOT",
+    "uuid": "783f14c8-06c6-5d2f-8a40-0eef4178df2e"
+  },
+  {
+    "address": "0xcf3222b7FDa7a7563b9E1E6C966Bead04AC23c36",
+    "ticker": "ESCH",
+    "decimal": 18,
+    "name": "Escher",
+    "uuid": "bb6f956d-9b35-5a3d-9207-02db58d3c720"
+  },
+  {
+    "address": "0x500684CE0D4f04aBeDff3e54fCF8acC5E6CFc4bD",
+    "ticker": "GEO",
+    "decimal": 8,
+    "name": "GeoCoin",
+    "uuid": "d3f40fe9-f59f-53f6-aa3d-24d332ae1512"
+  },
+  {
+    "address": "0x0826180A4c981d5095Cb5c48BB2A098A44cf6f73",
+    "ticker": "GRANS",
+    "decimal": 18,
+    "name": "10grans",
+    "uuid": "e0b5fc2d-afea-5a8f-8bae-150a3dddb83e"
+  },
+  {
+    "address": "0x7845fCbE28ac19ab7ec1C1D9674E34fdCB4917Db",
+    "ticker": "INK",
+    "decimal": 18,
+    "name": "INK",
+    "uuid": "86485dbc-035f-5544-b4f5-92cd1fe8dfa6"
+  },
+  {
+    "address": "0x4b4899a10F3E507DB207b0ee2426029eFa168a67",
+    "ticker": "QWARK",
+    "decimal": 8,
+    "name": "QWARK",
+    "uuid": "80fad14e-93a5-5bdb-9ed8-998218cec7e8"
+  },
+  {
+    "address": "0x5e1715bB79805Bd672729760B3f7F34D6f485098",
+    "ticker": "RICKS",
+    "decimal": 8,
+    "name": "RICKS",
+    "uuid": "5c604fe8-2a89-5b7d-b09b-e690dab9146f"
+  },
+  {
+    "address": "0x497E20586F86c35592FF8F65CdE94F296514C387",
+    "ticker": "SNARG",
+    "decimal": 0,
+    "name": "Snarg01",
+    "uuid": "cd2dbd3a-cf6a-5e4d-8407-7a5363c383eb"
+  },
+  {
+    "address": "0x20e3dD746DdF519B23Ffbbb6Da7a5d33eA6349D6",
+    "ticker": "SPHR",
+    "decimal": 8,
+    "name": "Sphere",
+    "uuid": "9c7b1611-0c80-5e7d-b3c4-218f86fa5088"
+  },
+  {
+    "address": "0x402C2C3aceeb52b8654A0631012ceD49cbc9bDc4",
+    "ticker": "SPHRC",
+    "decimal": 18,
+    "name": "Sphere Cubed",
+    "uuid": "4a7872c8-826d-5c9c-94d5-82d99920ee47"
+  },
+  {
+    "address": "0xcf823eb6f62a30EDB005B91383e2fa364dd753Dc",
+    "ticker": "TGE1",
+    "decimal": 18,
+    "name": "Ubiq TGE 1",
+    "uuid": "b061ff19-cdb7-5dce-841f-3297d80c6b88"
+  }
+]
