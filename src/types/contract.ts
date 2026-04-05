@@ -4,7 +4,7 @@ import { TUuid } from './uuid';
 
 export interface Contract {
   name: string;
-  label?: string; // Added in InteractWithContracts/stateFactory.. !? @todo: remove since duplicate of name
+  label?: string; // Optional: UI-only field, typically set to match 'name' when passed to select components
   networkId: NetworkId;
   address: TAddress;
   abi: string;

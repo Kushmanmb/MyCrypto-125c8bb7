@@ -46,6 +46,9 @@ const slice = createSlice({
     },
     setAnalyticsUserID(state, action: PayloadAction<string>) {
       state.analyticsUserID = action.payload;
+    },
+    setEIP1559Enabled(state, action: PayloadAction<boolean>) {
+      state.isEIP1559Enabled = action.payload;
     }
   }
 });
@@ -60,7 +63,8 @@ export const {
   removeExcludedAsset,
   setDemoMode,
   setProductAnalyticsAuthorisation,
-  setAnalyticsUserID
+  setAnalyticsUserID,
+  setEIP1559Enabled
 } = slice.actions;
 
 export default slice;
@@ -80,6 +84,10 @@ export const canTrackProductAnalytics = createSelector(
   (s) => s.canTrackProductAnalytics
 );
 export const getAnalyticsUserID = createSelector(getSettings, (s) => s.analyticsUserID);
+export const getIsEIP1559Enabled = createSelector(
+  getSettings,
+  (s) => s.isEIP1559Enabled ?? true // Default to true if not set
+);
 /**
  * Actions
  */
